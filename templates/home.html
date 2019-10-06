@@ -6,7 +6,9 @@
 <h1>Shirts for sale</h1>
 <a href="/shirts/new">New Shirt</a>
     {% for shirt in shirts %}
-        <h2>{{ shirt.title }}</h2>
+    <h2><a href='/shirts/{{ shirt._id }}'>{{ shirt.title }}</a></h2>
+        <small>{{ shirt.image }}</small>
+        <small>{{ shirt.price }}</small>
         <small>{{ shirt.description }}</small>
     {% endfor %}
 {% endblock %}

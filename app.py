@@ -1,6 +1,6 @@
 from flask import Flask, render_template, request, redirect, url_for
 from pymongo import MongoClient
-
+from bson.objectid import ObjectId
 
 app = Flask(__name__)
 client = MongoClient()
@@ -20,13 +20,18 @@ def shirts_new():
 def shirt_upload():
     # upload new shirt
     shirt = {
-        'title': request.form.get('title'),
-        'image': request.form.get('image').split(),
-        'price': request.form.get('price').split(),
-        'description': request.form.get('description')
+        "title": request.form.get("title"),
+        "image": request.form.get("image").split(),
+        "price": request.form.get("price").split(),
+        "description": request.form.get("description")
     }
-    shirts.insert_one(shirt)
-    return redirect(url_for("index"))
+    shirt_id = shirts.insert_one(shirt).inserted_id
+    return redirect(url_for("shirt_show", shirt_id=shirt_id))
+
+@app.route("/shirts/<shirt_id>")
+def shirt_show(shirt_id):
+    shirt = shirts.find_one({"_id": ObjectId(shirt_id)})
+    return render_template("shirt_show.html", shirt=shirt)
 
 if __name__ == "__main__":
     app.run(debug=True)
