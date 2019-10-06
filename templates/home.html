@@ -1,6 +1,9 @@
 <!-- <h1>Create</h1> -->
 {% extends "base.html" %}
 
-    {% block content %}
-        <p>{{ msg }}</p>
-    {% endblock %}
+{% block content %}
+    {% for shirt in shirts %}
+        <h2>{{ shirt.title }}</h2>
+        <small>{{ shirt.description }}</small>
+    {% endfor %}
+{% endblock %}
