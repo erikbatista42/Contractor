@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+
+{% block content %}
+<form method='POST' action='/shirts'>
+    <fieldset>
+    <legend>Sell New Shirt</legend>
+    <!-- TITLE -->
+    <p>
+        <label for='title'>Shirt Title:</label><br>
+        <input type='text' name='title' />
+    </p>
+    <p>
+        <div style="height:0px;overflow:hidden">
+                <input type="file" id="fileInput" name="fileInput" />
+        </div>
+        <button type="button" onclick="chooseFile();">Upload Shirt Image</button>
+    </p>
+    <p>
+        <label for='price'>Price</label><br>
+        <input type='text' name='price' />
+    </p>
+    <p>
+            <label for='description'>Description</label><br>
+            <input type='text' name='description' />
+        </p>
+    
+    </fieldset>
+
+    <!-- BUTTON -->
+    <p>
+        <button type='submit'>Post</button>
+    </p>
+</form>
+{% endblock %}

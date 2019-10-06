@@ -17,5 +17,10 @@ shirts = db.shirts
 def index():
     return render_template('home.html', shirts=shirts.find())
 
+@app.route("/shirts/new")
+def shirts_new():
+    # create new shirt to sell
+    return render_template("shirts_new.html")
+
 if __name__ == "__main__":
     app.run(debug=True)
