@@ -21,8 +21,8 @@ def shirt_upload():
     # upload new shirt
     shirt = {
         "title": request.form.get("title"),
-        "image": request.form.get("image").split(),
-        "price": request.form.get("price").split(),
+        "image": request.form.get("image"),
+        "price": request.form.get("price"),
         "description": request.form.get("description")
     }
     shirt_id = shirts.insert_one(shirt).inserted_id
