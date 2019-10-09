@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% block content %}
+<a href='/'>Back to Home</a>
+<form method='POST' action='/shirts/{{shirt._id}}'>
+    <fieldset>
+    <legend>Update Shirt</legend>
+    <!-- TITLE -->
+    <p>
+        <label for='title'>Update Shirt Title:</label><br>
+        <input type='text' name='title' />
+    </p>
+    <p>
+            <label for='image'>Update Shirt Image URL:</label><br>
+            <input type='text' name='image' />
+    </p>
+    <p>
+        <label for='price'>Update Price:</label><br>
+        <input type='text' name='price' />
+    </p>
+    <p>
+            <label for='description'>Update Description:</label><br>
+            <input type='text' name='description' />
+        </p>
+    
+    </fieldset>
+
+    <!-- BUTTON -->
+    <p>
+        <button type='submit'>Update</button>
+    </p>
+</form>
+{% endblock %}

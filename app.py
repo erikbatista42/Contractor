@@ -33,5 +33,22 @@ def shirt_show(shirt_id):
     shirt = shirts.find_one({"_id": ObjectId(shirt_id)})
     return render_template("shirt_show.html", shirt=shirt)
 
+@app.route("/shirts/<shirt_id>/edit")
+def shirt_edit(shirt_id):
+    # show edit form
+    shirt = shirts.find_one({"_id" : ObjectId(shirt_id)})
+    return render_template("shirt_edit.html", shirt=shirt)
+
+@app.route("/shirts/<shirt_id>", methods=["POST"])
+def shirt_update(shirt_id):
+    updated_shirt = {
+        "title": request.form.get("title"),
+        "image": request.form.get("image").split(),
+        "price": request.form.get("price").split(),
+        "description": request.form.get("description")
+    }
+    shirts.update_one({"_id": ObjectId(shirt_id)},{ "$set": updated_shirt})
+    return redirect(url_for("shirt_show", shirt_id=shirt_id))
+
 if __name__ == "__main__":
     app.run(debug=True)
