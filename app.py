@@ -50,5 +50,10 @@ def shirt_update(shirt_id):
     shirts.update_one({"_id": ObjectId(shirt_id)},{ "$set": updated_shirt})
     return redirect(url_for("shirt_show", shirt_id=shirt_id))
 
+@app.route("/shirt/<shirt_id>/delete", methods=["POST"])
+def shirt_delete(shirt_id):
+    shirts.delete_one({"_id": ObjectId(shirt_id)})
+    return redirect(url_for("index"))
+
 if __name__ == "__main__":
     app.run(debug=True)
