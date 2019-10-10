@@ -11,10 +11,12 @@
 }
 
 .back-btn {
-    float: left;
-    margin-top: 15px;
-    margin-left: 15px;
-    margin-bottom: 15px;
+    font-weight: 500;
+    position: absolute;
+    float: right;
+    margin-top: 7.5px;
+    left: 15px;
+    
 }
 
 .back-btn > button {
@@ -54,10 +56,13 @@
 }
 
 .add-btn {
+    font-weight: 500;
+    position: absolute;
     float: right;
-    margin-top: 15px;
-    margin-right: 15px;
-    margin-bottom: 15px;
+    margin-top: 7.5px;
+    right: 15px;
+    /* margin-right: 15px; */
+    /* margin-bottom: 15px; */
 }
 
 .add-btn > button {

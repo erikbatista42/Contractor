@@ -1,5 +1,9 @@
 {% extends "base.html" %}
 
+{% block navbarLeftBtn %}
+    <a class="back-btn" href="javascript:history.back()"><button>⛔️ Cancel </button></a>
+{% endblock %}
+
 {% block content %}
 <form method='POST' action='/shirts'>
     <fieldset>
@@ -17,11 +21,6 @@
         <label for='price'>Price</label><br>
         <input type='text' name='price' />
     </p>
-    <p>
-            <label for='description'>Description</label><br>
-            <input type='text' name='description' />
-        </p>
-    
     </fieldset>
 
     <!-- BUTTON -->

@@ -8,12 +8,16 @@
     <title>Teddy Fresh 🐻</title>
 </head>
 <body>
+    
     <div class="nav">
-            <!-- <a class="back-btn" href="/"><button>Go back</button></a> -->
+            {% block navbarLeftBtn %}
+            {% endblock navbarLeftBtn %}
             <a class="home" href="/">Teddy Fresh 🐻</a>
-            <a href='/shirts/new' class='add-btn'><button><b>+</b> Fresh item</button></a>
+            {% block navbarRightBtn %}
+            {% endblock navbarRightBtn %}
+            
     </div>
-        
+    
         
     {% block content %}
     <script src="//code.jquery.com/jquery-1.12.0.min.js"></script>

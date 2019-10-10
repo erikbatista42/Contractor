@@ -1,7 +1,12 @@
 <!-- <h1>Create</h1> -->
 {% extends "base.html" %}
 
+{% block navbarRightBtn %}
+    <a href='/shirts/new' class='add-btn'><button><b>+</b> Fresh item</button></a>
+{% endblock navbarRightBtn %}
+
 {% block content %}
+
 <link rel="stylesheet" href="/static/home.css">
 <br>
 <div class="flex-container">
@@ -10,7 +15,7 @@
     <div>
             <a  style="text-decoration: none;" href="/shirts/{{ shirt._id }}">
         <img style="width: 200px; height: 200px; margin-top: 30px;" class="card-img-top" src="{{ shirt.image }}" alt="Card image cap">
-     <div style="">
+     <div>
         <p class="des">{{ shirt.title }}</p>
         <p class="des">{{ shirt.price }}</p>
      </div>
