@@ -2,20 +2,20 @@ body {
     background-color: #f1f1f1;
 }
 .card {
-    background-color: rebeccapurple;
-    color: rebeccapurple;
+    
 }
 
 .flex-container {
     display: flex;
     flex-wrap: wrap;
-    background-color: DodgerBlue;
     margin-top: 40px;
     margin-left: 100px;
     margin-right: 100px;
+    margin-bottom: 40px;
 }
+
 .flex-container > div {
-    background-color: #f1f1f1;
+    background-color: white;
     width: 340px;
     height: 360px;
     margin: 10px;
@@ -23,4 +23,20 @@ body {
     line-height: 75px;
     font-size: 30px;
     border-radius: 5px;
+}
+
+.des {
+    height: 55px;
+    margin: 0px;
+    font-size: 26px;
+    font-weight: 500;
+    color: rgb(242, 149, 196);
+}
+
+.des:hover {
+    text-decoration: none;
+}
+
+.flex-container > div:hover {
+    cursor: pointer;
 }
