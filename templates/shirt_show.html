@@ -1,16 +1,36 @@
 {% extends 'base.html' %}
 
 {% block navbarLeftBtn %}
-    <a class="back-btn" href="/"><button>⬅ Back </button></a>
+    <a class="back-btn" href="/"><button>⬅ Back</button></a>
 {% endblock %}
 
 {% block content %}
-    <h1>{{ shirt.title }}</h1>
+<link rel="stylesheet" href="/static/shirt_show.css">
+    <div class="card">
+            <img width='300' height='280' src="{{ shirt.image }}">
+            <h1>{{ shirt.title }}</h1>
+            <p class="price">{{ shirt.price }}</p>
+
+            
+        <div class="options-container">
+                <p class="edit">
+                        <a href='/shirts/{{ shirt._id }}/edit'>
+                            <button>Edit</button>
+                        </a>
+                </p>
+        
+                <form  method='POST' action='/shirt/{{ shirt._id }}/delete'>
+                    <button type='submit' class="delete">Delete</button>
+                </form>
+        </div>
+            
+  
+    </div>
+      
+    <!-- <h1>{{ shirt.title }}</h1>
     <img width='420' height='315' src="{{ shirt.image }}">
     <h2>{{ shirt.price }}</h2>
     <h2>{{ shirt.description }}</h2>
-    <p><a href='/shirts/{{ shirt._id }}/edit'>Edit</a></p>
-    <p><form method='POST' action='/shirt/{{ shirt._id }}/delete'>
-        <button type='submit'>Delete</button>
-    </form></p>
+    <p><a href='/shirts/{{ shirt._id }}/edit'>Edit</a></p> -->
+    
 {% endblock %}

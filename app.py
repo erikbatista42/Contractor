@@ -23,7 +23,6 @@ def shirt_upload():
         "title": request.form.get("title"),
         "image": request.form.get("image"),
         "price": request.form.get("price"),
-        "description": request.form.get("description")
     }
     shirt_id = shirts.insert_one(shirt).inserted_id
     return redirect(url_for("shirt_show", shirt_id=shirt_id))
@@ -44,8 +43,7 @@ def shirt_update(shirt_id):
     updated_shirt = {
         "title": request.form.get("title"),
         "image": request.form.get("image").split(),
-        "price": request.form.get("price").split(),
-        "description": request.form.get("description")
+        "price": request.form.get("price").split()
     }
     shirts.update_one({"_id": ObjectId(shirt_id)},{ "$set": updated_shirt})
     return redirect(url_for("shirt_show", shirt_id=shirt_id))
