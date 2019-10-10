@@ -1,0 +1,84 @@
+.nav {
+    background-color: rgb(242, 149, 196);
+    width: 100%;
+    text-align: center;
+    line-height: 0.6in;
+    text-decoration: none;
+}
+
+.nav > a {
+    text-decoration: none;
+}
+
+.back-btn {
+    float: left;
+    margin-top: 15px;
+    margin-left: 15px;
+    margin-bottom: 15px;
+}
+
+.back-btn > button {
+    height: 40px; 
+    width: 120px;
+    line-height: 40px;
+    background-color: rgb(34, 17, 82);
+    color: whitesmoke;
+    box-sizing: border-box;
+    border-radius: 10px;
+    border: 0px rgb(242, 149, 196);
+}
+
+.back-btn > button:hover {
+    display:block;
+    height: 40px; 
+    width: 120px;
+    line-height: 40px;
+    background-color: white;
+    color: rgb(34, 17, 82);
+    box-sizing: border-box;
+    border-radius: 10px;
+    border: 0px solid red;
+}
+
+.home {
+    color: white;
+    font-size: 26px;
+    font-family: Helvetica;
+    font-weight: bold;
+}
+.home:hover {
+    color: white;
+    font-size: 26px;
+    font-family: Helvetica;
+    font-weight: bold;
+}
+
+.add-btn {
+    float: right;
+    margin-top: 15px;
+    margin-right: 15px;
+    margin-bottom: 15px;
+}
+
+.add-btn > button {
+    height: 40px; 
+    width: 120px;
+    line-height: 40px;
+    background-color: rgb(34, 17, 82);
+    color: whitesmoke;
+    box-sizing: border-box;
+    border-radius: 10px;
+    border: 0px rgb(242, 149, 196);
+}
+
+.add-btn > button:hover {
+    display:block;
+    height: 40px; 
+    width: 120px;
+    line-height: 40px;
+    background-color: white;
+    color: rgb(34, 17, 82);
+    box-sizing: border-box;
+    border-radius: 10px;
+    border: 0px solid red;
+}

@@ -1,19 +1,18 @@
 <!-- <h1>Create</h1> -->
 {% extends "base.html" %}
 
-
 {% block content %}
-<h1>Shirts for sale</h1>
-<a href="/shirts/new">New Shirt</a>
-    {% for shirt in shirts %}
-    <div style="background-color: rgb(0, 255, 179);">
-    <h2><a href='/shirts/{{ shirt._id }}'>{{ shirt.title }}</a></h2>
-        <br>
-        <img src="{{ shirt.image }}">
-        <br>
-        <small>{{ shirt.price }}</small>
-        <br>
-        <small>{{ shirt.description }}</small>
+<link rel="stylesheet" href="/static/home.css">
+<br>
+<div class="flex-container">
+{% for shirt in shirts %}
+    <a href="/shirts/{{ shirt._id }}"></a>
+    <div>
+        <img style="width: 100px; height: 75px;" class="card-img-top" src="{{ shirt.image }}" alt="Card image cap">
+        <h5 class="card-title">{{ shirt.title }}</h5>
+        <p>{{ shirt.price }}</p>
     </div>
-    {% endfor %}
+    </a>
+{% endfor %}
+</div>
 {% endblock %}
