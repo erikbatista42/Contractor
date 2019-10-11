@@ -5,11 +5,10 @@
 {% endblock %}
 
 {% block content %}
-<form method='POST' action='/shirts/{{shirt._id}}'>
+<form method='POST' action='/shirts/{{shirt._id}}'  style="text-align: center; padding-top: 40px;">
     <fieldset>
 
     <legend>Update Shirt</legend>
-    <!-- TITLE -->
     <p>
         <label for='title'>Update Shirt Title:</label><br>
         <input type='text' name='title' />

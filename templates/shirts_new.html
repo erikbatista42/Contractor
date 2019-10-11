@@ -5,10 +5,10 @@
 {% endblock %}
 
 {% block content %}
-<form method='POST' action='/shirts'>
+<form method='POST' action='/shirts' style="text-align: center; padding-top: 40px;">
     <fieldset>
     <legend>Sell New Shirt</legend>
-    <!-- TITLE -->
+
     <p>
         <label for='title'>Shirt Title:</label><br>
         <input type='text' name='title' />
@@ -22,8 +22,6 @@
         <input type='text' name='price' />
     </p>
     </fieldset>
-
-    <!-- BUTTON -->
     <p>
         <button type='submit'>Post</button>
     </p>
