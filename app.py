@@ -1,12 +1,15 @@
 from flask import Flask, render_template, request, redirect, url_for
 from pymongo import MongoClient
 from bson.objectid import ObjectId
+import os
 
-app = Flask(__name__)
-client = MongoClient()
+host = os.environ.get('MONGODB_URI', 'mongodb://localhost:27017/Contractor')
+
+client = MongoClient(host=host)
 db = client.Store
 shirts = db.shirts
 
+app = Flask(__name__)
 @app.route("/")
 def index():
     return render_template('home.html', shirts=shirts.find())
