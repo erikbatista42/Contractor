@@ -32,6 +32,7 @@ def shirt_upload():
 
 @app.route("/shirts/<shirt_id>")
 def shirt_show(shirt_id):
+    # show shirt information
     shirt = shirts.find_one({"_id": ObjectId(shirt_id)})
     return render_template("shirt_show.html", shirt=shirt)
 
@@ -57,4 +58,4 @@ def shirt_delete(shirt_id):
     return redirect(url_for("index"))
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(debug=True, host='0.0.0.0', port=os.environ.get('PORT', 5000))
